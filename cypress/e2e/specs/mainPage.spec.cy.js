@@ -1,4 +1,4 @@
-import mainPage from "../pages/main.page"
+import mainPage from "../pages/main.page";
 
 describe('Check displaying "about us" page', () => {
   it('open the mainPage', () => {

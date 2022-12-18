@@ -1,17 +1,18 @@
-class MainPage {
+import Base from "./base";
+
+class MainPage extends Base {
 
   baseUrl = 'https://telnyx.com/';
 
   elements = {
-    // testMenu: () => cy.get(':nth-child(8) > .sc-7b3980dc-6 ~ div'),
-    // companyTab: () => cy.get('//ul[contains(@class,"jgxzDd")]//li[5]'),
     companyTab: () => cy.get(':nth-child(8) > .sc-7b3980dc-6'),
     aboutTelnyxLink: () => cy.get('//span[contains(text(),"About") and contains(@class,"dlshfZ")]'),
     cookiePopUp: () => cy.get('.jRrWoh'),
     switchFormTitle: () => cy.get('.sc-1e626587-2 > .mchNoDecorate > span'),
     tollFreeInput: () => cy.get('#toll-free-numbers'),
     programmableVoiceInput: () => cy.get('#no'),
-    compareCostsColumnTitle: () => cy.get('div.spZHp')
+    compareCostsColumnTitle: () => cy.get('div.spZHp'),
+    exploreButton: () => cy.get('.cNyeyR > .eKznVb > .hBNXWZ')
   }
 
   openMainPage() {
@@ -45,17 +46,18 @@ class MainPage {
   }
 
   scrollToSwitchFormTitle() {
-    this.elements.switchFormTitle()
-      .scrollIntoView({ easing: 'linear' })
-      .should('be.visible');
+    this.scrollElement(this.elements.switchFormTitle());
   }
 
   clickTillFreeInput() {
     this.elements.tollFreeInput().click();
     this.elements.programmableVoiceInput().click();
-    this.elements.compareCostsColumnTitle()
-      .scrollIntoView({ easing: 'linear' })
-      .should('be.visible');
+    this.scrollElement(this.elements.compareCostsColumnTitle());
+  }
+
+  clickExploreButton() {
+    this.clickElement(this.elements.exploreButton());
+    cy.url().should('include', '/products');
   }
 
 }

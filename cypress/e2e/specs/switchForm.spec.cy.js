@@ -1,4 +1,4 @@
-import mainPage from "../pages/main.page"
+import mainPage from "../pages/main.page";
 
 describe('Check the "Switch + Save" form work', () => {
   it('should values differs from 2578', () => {
