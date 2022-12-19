@@ -14,7 +14,8 @@ class MainPage extends Base {
     compareCostsColumnTitle: () => cy.get('div.spZHp'),
     exploreButton: () => cy.get('.cNyeyR > .eKznVb > .hBNXWZ'),
     signUpButton: () => cy.get('.hhCIhu a[href="/sign-up"]'),
-    loginButton: () => cy.get('.biNvWx :nth-child(4)')
+    loginButton: () => cy.get('.biNvWx :nth-child(4)'),
+    talkExpertButton: () => cy.get('.byuCMl')
   }
 
   openMainPage() {
@@ -27,8 +28,10 @@ class MainPage extends Base {
     this.elements.cookiePopUp().click();
   }
 
-  // don't work
+  // doesn't work
   clickCompanyTab() {
+    // this.elements.companyTab().click({ force: true });
+    this.elements.aboutTelnyxLink().should('be.hidden').invoke('show').click();
     // this.elements.companyTab().invoke('show').click();
     // cy.contains(`${this.elements.aboutTelnyxLink()}`).click();
     // this.elements.companyTab().click({ force: true });
@@ -71,6 +74,10 @@ class MainPage extends Base {
   clickLoginButton() {
     this.clickElement(this.elements.loginButton());
     cy.url().should('include', '/login');
+  }
+
+  clickTalkExpertButton() {
+    this.clickElement(this.elements.talkExpertButton());
   }
 
 }

@@ -5,6 +5,6 @@ describe('Check displaying "about us" page', () => {
     // cy.viewport(1200, 900);
     mainPage.openMainPage();
     mainPage.closeCookiePopUp();
-    // mainPage.clickCompanyTab();
+    mainPage.clickCompanyTab();
   })
 })
