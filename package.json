@@ -4,6 +4,6 @@
     "cypress-xpath": "^2.0.1"
   },
   "scripts": {
-    "regression-test": "cypress run --browser chrome --spec cypress/e2e/specs/**.js"
+    "regression-test": "cypress run --browser chrome --spec specs/*.spec.js"
   }
 }
