@@ -6,4 +6,8 @@ module.exports = defineConfig({
       // implement node event listeners here
     },
   },
+  chromeWebSecurity: true,
+  viewportHeight: 950,
+  viewportWidth: 1200,
+  nodeVersion: 'system',
 });

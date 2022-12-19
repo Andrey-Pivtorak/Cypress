@@ -23,7 +23,6 @@ class MainPage extends Base {
   }
 
   openMainPage() {
-    cy.viewport(1200, 900);
     cy.visit(`${this.baseUrl}`);
     cy.title().should('include', 'Telnyx | Communication APIs');
   }

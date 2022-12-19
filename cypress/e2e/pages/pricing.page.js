@@ -14,7 +14,6 @@ class PricingPage extends Base {
   }
 
   openPricingPage() {
-    cy.viewport(1200, 900);
     cy.visit(`${this.baseUrl}`);
     cy.url().should('include', '/pricing');
   }

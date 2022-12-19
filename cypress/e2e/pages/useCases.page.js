@@ -10,7 +10,6 @@ class UseCasesPage extends Base {
   }
 
   openUseCasesPage() {
-    cy.viewport(1200, 900);
     cy.visit(`${this.baseUrl}`);
     cy.url().should('include', '/use-cases');
   }
