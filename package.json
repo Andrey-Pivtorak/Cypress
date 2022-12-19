@@ -3,5 +3,7 @@
     "cypress": "^12.1.0",
     "cypress-xpath": "^2.0.1"
   },
-  "scripts": {}
+  "scripts": {
+    "regression-test": "cypress run --browser chrome --spec cypress/e2e/specs/**.js"
+  }
 }

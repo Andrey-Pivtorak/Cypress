@@ -15,7 +15,11 @@ class MainPage extends Base {
     exploreButton: () => cy.get('.cNyeyR > .eKznVb > .hBNXWZ'),
     signUpButton: () => cy.get('.hhCIhu a[href="/sign-up"]'),
     loginButton: () => cy.get('.biNvWx :nth-child(4)'),
-    talkExpertButton: () => cy.get('.byuCMl')
+    talkExpertButton: () => cy.get('.byuCMl'),
+
+    // menuHeader: () => cy.get('.lpsuoP ~ .hhCIhu'),
+    // subMenuHeader: () => cy.get('//span[contains(text(),"Company")]/../following-sibling::div')
+
   }
 
   openMainPage() {
@@ -30,8 +34,13 @@ class MainPage extends Base {
 
   // doesn't work
   clickCompanyTab() {
+    // this.elements.menuHeader().contains('Company').next('//span[contains(text(),"Company")]/../following-sibling::div').then($el=>{
+    //         cy.wrap($el).invoke('show')
+    //         cy.wrap($el).contains('About Telnyx').click()
+    //     })
+
     // this.elements.companyTab().click({ force: true });
-    this.elements.aboutTelnyxLink().should('be.hidden').invoke('show').click();
+    // this.elements.aboutTelnyxLink().should('be.hidden').invoke('show').click();
     // this.elements.companyTab().invoke('show').click();
     // cy.contains(`${this.elements.aboutTelnyxLink()}`).click();
     // this.elements.companyTab().click({ force: true });
