@@ -13,5 +13,11 @@ export default class Base {
       .click();
   }
 
+  enterInput(locator, inputValue) {
+    locator
+      .type(inputValue)
+      .should('have.value', `${inputValue}`);
+  }
+
 }
 

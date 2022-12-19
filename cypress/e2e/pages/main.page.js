@@ -12,10 +12,13 @@ class MainPage extends Base {
     tollFreeInput: () => cy.get('#toll-free-numbers'),
     programmableVoiceInput: () => cy.get('#no'),
     compareCostsColumnTitle: () => cy.get('div.spZHp'),
-    exploreButton: () => cy.get('.cNyeyR > .eKznVb > .hBNXWZ')
+    exploreButton: () => cy.get('.cNyeyR > .eKznVb > .hBNXWZ'),
+    signUpButton: () => cy.get('.hhCIhu a[href="/sign-up"]'),
+    loginButton: () => cy.get('.biNvWx :nth-child(4)')
   }
 
   openMainPage() {
+    cy.viewport(1200, 900);
     cy.visit(`${this.baseUrl}`);
     cy.title().should('include', 'Telnyx | Communication APIs');
   }
@@ -58,6 +61,16 @@ class MainPage extends Base {
   clickExploreButton() {
     this.clickElement(this.elements.exploreButton());
     cy.url().should('include', '/products');
+  }
+
+  clickSignUpButton() {
+    this.clickElement(this.elements.signUpButton());
+    cy.url().should('include', '/sign-up');
+  }
+
+  clickLoginButton() {
+    this.clickElement(this.elements.loginButton());
+    cy.url().should('include', '/login');
   }
 
 }

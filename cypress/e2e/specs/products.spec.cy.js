@@ -3,7 +3,6 @@ import productsPage from "../pages/products.page";
 
 describe('Check products', () => {
   beforeEach(() => {
-    cy.viewport(1200, 900)
     mainPage.openMainPage();
     mainPage.closeCookiePopUp();
     mainPage.clickExploreButton();
@@ -14,7 +13,7 @@ describe('Check products', () => {
     productsPage.scrollNumbersCategory();
   })
 
-  it('should products be clickability', () => {
+  it('should open products', () => {
     productsPage.clickWebrtcProduct();
     cy.wait(2000).go('back');
     productsPage.clickStorageProduct();
