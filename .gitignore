@@ -3,5 +3,4 @@ cypress/examples
 cypress/videos/
 cypress/screenshots/
 cypress/fixtures/
-cypress/support/
 
